@@ -79,8 +79,7 @@ public class HookahModClient implements ClientModInitializer {
 
                         if (CONFIG.sounds) player.playSound(ModSounds.INHALE);
                     }
-
-                    // isFirstTick=true only on the very first tick — controls sound on other clients
+                    
                     boolean firstTick = tickCounter == 0;
                     tickCounter++;
                     ClientPlayNetworking.send(new HookahStartPacket(

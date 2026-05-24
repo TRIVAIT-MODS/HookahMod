@@ -3,6 +3,7 @@ package org.trivait.hookahmod.server;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionContents;
@@ -54,31 +55,31 @@ public class BrewingEffectHelper {
         if (stack.is(Items.SUGAR))
             return Optional.of(new MobEffectInstance(
                     BuiltInRegistries.MOB_EFFECT.wrapAsHolder(
-                            net.minecraft.world.effect.MobEffects.MOVEMENT_SPEED.value()
+                            MobEffects.SPEED.value()
                     ), 0, 40, false, true, true));
 
         if (stack.is(Items.BLAZE_POWDER))
             return Optional.of(new MobEffectInstance(
                     BuiltInRegistries.MOB_EFFECT.wrapAsHolder(
-                            net.minecraft.world.effect.MobEffects.DAMAGE_BOOST.value()
+                            MobEffects.STRENGTH.value()
                     ), 0, 40, false, true, true));
 
         if (stack.is(Items.GLOWSTONE_DUST))
             return Optional.of(new MobEffectInstance(
                     BuiltInRegistries.MOB_EFFECT.wrapAsHolder(
-                            net.minecraft.world.effect.MobEffects.DIG_SPEED.value()
+                            MobEffects.HASTE.value()
                     ), 0, 40, false, true, true));
 
         if (stack.is(Items.REDSTONE))
             return Optional.of(new MobEffectInstance(
                     BuiltInRegistries.MOB_EFFECT.wrapAsHolder(
-                            net.minecraft.world.effect.MobEffects.MOVEMENT_SLOWDOWN.value()
+                            MobEffects.SLOWNESS.value()
                     ), 0, 40, false, true, true));
 
         if (stack.is(Items.FERMENTED_SPIDER_EYE) || stack.is(Items.LARGE_FERN) || stack.is(Items.FERN))
             return Optional.of(new MobEffectInstance(
                     BuiltInRegistries.MOB_EFFECT.wrapAsHolder(
-                            net.minecraft.world.effect.MobEffects.CONFUSION.value()
+                            MobEffects.NAUSEA.value()
                     ), 0, 40, false, true, true));
 
         return Optional.empty();
