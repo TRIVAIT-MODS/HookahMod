@@ -22,12 +22,10 @@ public class HookahParticle extends TextureSheetParticle {
         this.zd = vz;
     }
 
-    /** Apply a tint color with a given blend coefficient (0.0–1.0). */
     public void applyTint(int packedRgb, float coefficient) {
         float r = ((packedRgb >> 16) & 0xFF) / 255f;
         float g = ((packedRgb >> 8)  & 0xFF) / 255f;
         float b = ( packedRgb        & 0xFF) / 255f;
-        // Blend: lerp from white (1,1,1) toward the effect color
         this.rCol = 1f + (r - 1f) * coefficient;
         this.gCol = 1f + (g - 1f) * coefficient;
         this.bCol = 1f + (b - 1f) * coefficient;

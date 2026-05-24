@@ -38,7 +38,7 @@ public class ModNetworking {
                 effectColor = BrewingEffectHelper.getEffectColor(effect.get());
                 if (HookahServerState.effectsEnabled && payload.smokingDurationMs() == 0) {
                     MobEffectInstance orig = effect.get();
-                    sender.addEffect(new MobEffectInstance(orig.getEffect(), 5, orig.getAmplifier(), false, true, true));
+                    sender.addEffect(new MobEffectInstance(orig.getEffect(), orig.getAmplifier(), 40, false, true, true));
                 }
             }
 
