@@ -4,18 +4,19 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.particle.*;
+import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.util.RandomSource;
 
-public class HookahParticle extends TextureSheetParticle {
+public class HookahParticle extends SingleQuadParticle {
 
-    HookahParticle(ClientLevel clientLevel, double x, double y, double z,
-                   double vx, double vy, double vz, boolean longLife) {
-        super(clientLevel, x, y, z);
+    HookahParticle(ClientLevel level, double x, double y, double z,
+                   double vx, double vy, double vz,
+                   TextureAtlasSprite sprite) {
+        super(level, x, y, z, sprite);
         this.scale(3.0F);
         this.setSize(0.25F, 0.25F);
-        this.lifetime = longLife
-                ? this.random.nextInt(50) + 280
-                : this.random.nextInt(50) + 80;
+        this.lifetime = this.random.nextInt(50) + 80;
         this.gravity = 3.0E-6F;
         this.xd = vx;
         this.yd = vy + this.random.nextFloat() / 500.0;
@@ -50,8 +51,8 @@ public class HookahParticle extends TextureSheetParticle {
     }
 
     @Override
-    public ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+    public SingleQuadParticle.Layer getLayer() {
+        return SingleQuadParticle.Layer.TRANSLUCENT;
     }
 
     @Environment(EnvType.CLIENT)
@@ -65,10 +66,10 @@ public class HookahParticle extends TextureSheetParticle {
         @Override
         public Particle createParticle(SimpleParticleType type, ClientLevel level,
                                        double x, double y, double z,
-                                       double vx, double vy, double vz) {
-            HookahParticle p = new HookahParticle(level, x, y, z, vx, vy, vz, false);
+                                       double vx, double vy, double vz,
+                                       RandomSource random) {
+            HookahParticle p = new HookahParticle(level, x, y, z, vx, vy, vz, sprites.get(random));
             p.setAlpha(0.9F);
-            p.pickSprite(sprites);
             return p;
         }
     }
