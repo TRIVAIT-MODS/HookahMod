@@ -9,12 +9,6 @@ import org.trivait.hookahmod.config.Config;
 
 public class ParticleHelper {
 
-    /**
-     * Spawns a hookah smoke particle (or campfire smoke if white particles are off).
-     * If effectColor != -1 and shadeOfEffect is enabled, applies tint.
-     *
-     * @param effectColor packed RGB, or -1 for no tint
-     */
     public static void spawnSmoke(ClientLevel level,
                                    double x, double y, double z,
                                    double vx, double vy, double vz,
@@ -27,7 +21,6 @@ public class ParticleHelper {
             return;
         }
 
-        // Spawn via the particle engine so we can get the instance back for tinting
         Minecraft mc = Minecraft.getInstance();
         Particle particle = mc.particleEngine.createParticle(
                 ModParticles.HOOKAH_PARTICLE, x, y, z, vx, vy, vz

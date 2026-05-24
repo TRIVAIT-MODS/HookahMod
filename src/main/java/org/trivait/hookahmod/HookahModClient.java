@@ -6,9 +6,11 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.BrewingStandBlock;
 import net.minecraft.world.phys.BlockHitResult;
@@ -44,6 +46,14 @@ public class HookahModClient implements ClientModInitializer {
 
         ModNetworkingClient.register();
 
+        UseBlockCallback.EVENT.register((player, level, hand, hit) -> {
+            if (level.isClientSide() && player.isCrouching() && CONFIG.modEnabled
+                    && level.getBlockState(hit.getBlockPos()).getBlock() instanceof BrewingStandBlock) {
+                return InteractionResult.FAIL;
+            }
+            return InteractionResult.PASS;
+        });
+
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             if (client.player == null || client.level == null) return;
 
@@ -69,8 +79,7 @@ public class HookahModClient implements ClientModInitializer {
 
                         if (CONFIG.sounds) player.playSound(ModSounds.INHALE);
                     }
-
-                    // isFirstTick=true only on the very first tick — controls sound on other clients
+                    
                     boolean firstTick = tickCounter == 0;
                     tickCounter++;
                     ClientPlayNetworking.send(new HookahStartPacket(
