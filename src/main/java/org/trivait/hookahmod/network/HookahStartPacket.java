@@ -3,7 +3,7 @@ package org.trivait.hookahmod.network;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import org.trivait.hookahmod.HookahMod;
 
 public record HookahStartPacket(
@@ -13,7 +13,7 @@ public record HookahStartPacket(
 ) implements CustomPacketPayload {
 
     public static final CustomPacketPayload.Type<HookahStartPacket> TYPE =
-            new CustomPacketPayload.Type<>(ResourceLocation.fromNamespaceAndPath(HookahMod.MOD_ID, "hookah_start"));
+            new CustomPacketPayload.Type<>(Identifier.fromNamespaceAndPath(HookahMod.MOD_ID, "hookah_start"));
 
     public static final StreamCodec<FriendlyByteBuf, HookahStartPacket> CODEC = StreamCodec.of(
             (buf, pkt) -> {

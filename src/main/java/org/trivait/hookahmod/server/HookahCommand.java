@@ -4,13 +4,20 @@ import com.mojang.brigadier.CommandDispatcher;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 
 public class HookahCommand {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(
             Commands.literal("hookah")
-                .requires(src -> src.hasPermission(2))
+                .requires(src -> {
+                    ServerPlayer player = src.getPlayer();
+                    if (player != null) {
+                        return src.getServer().getPlayerList().isOp(player.nameAndId());
+                    }
+                    return src.getEntity() == null;
+                })
                 .then(Commands.literal("toggle")
                     .executes(ctx -> {
                         HookahServerState.networkingEnabled = !HookahServerState.networkingEnabled;
