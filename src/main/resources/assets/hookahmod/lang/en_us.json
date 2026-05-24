@@ -1,0 +1,15 @@
+{
+  "sounds.hookahmod.inhale": "Inhale",
+  "sounds.hookahmod.exhale": "Exhale",
+
+  "text.autoconfig.hookah_mod.title": "Hookah Mod",
+  "text.autoconfig.hookah_mod.option.modEnabled": "Mod Enabled",
+  "text.autoconfig.hookah_mod.option.particlesAboveBrewingStand": "Particles Above the Brewing Stand",
+  "text.autoconfig.hookah_mod.option.sounds": "Sounds",
+
+  "text.autoconfig.hookah_mod.option.particleSettings": "Particle Settings",
+  "text.autoconfig.hookah_mod.option.particleSettings.whiteParticles": "White Particles",
+  "text.autoconfig.hookah_mod.option.particleSettings.shadeOfEffect": "Effect Shade",
+  "text.autoconfig.hookah_mod.option.particleSettings.shadeOfEffect.@Tooltip": "Applies the hookah effect shade to the particle (only works with white particles)",
+  "text.autoconfig.hookah_mod.option.particleSettings.tintCoefficient": "Particle Tint Coefficient"
+}
