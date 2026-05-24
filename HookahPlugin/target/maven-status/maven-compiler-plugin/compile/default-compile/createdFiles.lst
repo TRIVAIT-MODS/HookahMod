@@ -1,0 +1,8 @@
+org\trivait\hookahPlugin\BrewingEffectHelper$1.class
+org\trivait\hookahPlugin\HookahMessageListener.class
+org\trivait\hookahPlugin\HookahServerState.class
+org\trivait\hookahPlugin\BrewingEffectHelper.class
+org\trivait\hookahPlugin\HookahPlugin.class
+org\trivait\hookahPlugin\PacketHelper.class
+org\trivait\hookahPlugin\HookahCommand.class
+org\trivait\hookahPlugin\PacketHelper$StartPacketData.class

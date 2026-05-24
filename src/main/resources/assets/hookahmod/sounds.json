@@ -1,0 +1,14 @@
+{
+  "inhale": {
+    "subtitle": "sounds.hookahmod.inhale",
+    "sounds": [
+      "hookahmod:inhale"
+    ]
+  },
+  "exhale": {
+    "subtitle": "sounds.hookahmod.exhale",
+    "sounds": [
+      "hookahmod:exhale"
+    ]
+  }
+}
