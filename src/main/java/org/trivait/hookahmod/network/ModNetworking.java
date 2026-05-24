@@ -16,8 +16,8 @@ import java.util.Optional;
 public class ModNetworking {
 
     public static void register() {
-        PayloadTypeRegistry.playC2S().register(HookahStartPacket.TYPE, HookahStartPacket.CODEC);
-        PayloadTypeRegistry.playS2C().register(HookahSmokePacket.TYPE, HookahSmokePacket.CODEC);
+        PayloadTypeRegistry.serverboundPlay().register(HookahStartPacket.TYPE, HookahStartPacket.CODEC);
+        PayloadTypeRegistry.clientboundPlay().register(HookahSmokePacket.TYPE, HookahSmokePacket.CODEC);
 
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) ->
                 HookahCommand.register(dispatcher)

@@ -5,7 +5,7 @@ import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
-import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.particle.v1.ParticleProviderRegistry;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.player.LocalPlayer;
@@ -39,7 +39,7 @@ public class HookahModClient implements ClientModInitializer {
         ModSounds.register();
         ModParticles.register();
 
-        ParticleFactoryRegistry.getInstance().register(ModParticles.HOOKAH_PARTICLE, HookahParticle.Factory::new);
+        ParticleProviderRegistry.getInstance().register(ModParticles.HOOKAH_PARTICLE, HookahParticle.Factory::new);
 
         AutoConfig.register(Config.class, GsonConfigSerializer::new);
         CONFIG = AutoConfig.getConfigHolder(Config.class).getConfig();
