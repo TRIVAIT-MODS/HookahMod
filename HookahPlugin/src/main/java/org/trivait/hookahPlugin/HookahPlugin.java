@@ -18,10 +18,10 @@ public final class HookahPlugin extends JavaPlugin {
 
         // Register /hookah command
         HookahCommand cmd = new HookahCommand();
-        getCommand("hookah").setExecutor(cmd);
-        getCommand("hookah").setTabCompleter(cmd);
+        getCommand("brewingStand").setExecutor(cmd);
+        getCommand("brewingStand").setTabCompleter(cmd);
 
-        getLogger().info("HookahPlugin enabled. Networking=" + HookahServerState.networkingEnabled
+        getLogger().info("BrewingStandSmoke enabled. Networking=" + HookahServerState.networkingEnabled
                 + " Effects=" + HookahServerState.effectsEnabled);
     }
 
@@ -29,6 +29,6 @@ public final class HookahPlugin extends JavaPlugin {
     public void onDisable() {
         getServer().getMessenger().unregisterIncomingPluginChannel(this, CHANNEL_C2S);
         getServer().getMessenger().unregisterOutgoingPluginChannel(this, CHANNEL_S2C);
-        getLogger().info("HookahPlugin disabled.");
+        getLogger().info("BrewingStandSmoke disabled.");
     }
 }
