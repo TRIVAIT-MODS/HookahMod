@@ -3,7 +3,7 @@ package org.trivait.hookahmod.config;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
-@me.shedaniel.autoconfig.annotation.Config(name = "hookah_mod")
+@me.shedaniel.autoconfig.annotation.Config(name = "brewing_stand_smoke")
 public class Config implements ConfigData {
     public boolean modEnabled = true;
     public boolean particlesAboveBrewingStand = true;

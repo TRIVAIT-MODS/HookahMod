@@ -2,8 +2,8 @@
 	"schemaVersion": 1,
 	"id": "hookahmod",
 	"version": "${version}",
-	"name": "HookahMod",
-	"description": "This mod adds hookah functionality to the brewing stand.",
+	"name": "Brewing Stand Smoke",
+	"description": "This mod adds smoke functionality to the brewing stand.",
 	"authors": [
 		"TRIVAIT"
 	],
