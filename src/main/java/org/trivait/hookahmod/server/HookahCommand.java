@@ -10,7 +10,7 @@ public class HookahCommand {
 
     public static void register(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(
-            Commands.literal("hookah")
+            Commands.literal("brewingStand")
                 .requires(src -> {
                     ServerPlayer player = src.getPlayer();
                     if (player != null) {
@@ -23,7 +23,7 @@ public class HookahCommand {
                         HookahServerState.networkingEnabled = !HookahServerState.networkingEnabled;
                         HookahServerState.save();
                         String state = HookahServerState.networkingEnabled ? "enabled" : "disabled";
-                        ctx.getSource().sendSuccess(() -> Component.literal("[HookahMod] Networking " + state), true);
+                        ctx.getSource().sendSuccess(() -> Component.literal("[BrewingStandSmoke] Networking " + state), true);
                         return 1;
                     })
                 )
@@ -32,7 +32,7 @@ public class HookahCommand {
                         HookahServerState.effectsEnabled = !HookahServerState.effectsEnabled;
                         HookahServerState.save();
                         String state = HookahServerState.effectsEnabled ? "enabled" : "disabled";
-                        ctx.getSource().sendSuccess(() -> Component.literal("[HookahMod] Effects " + state), true);
+                        ctx.getSource().sendSuccess(() -> Component.literal("[BrewingStandSmoke] Effects " + state), true);
                         return 1;
                     })
                 )

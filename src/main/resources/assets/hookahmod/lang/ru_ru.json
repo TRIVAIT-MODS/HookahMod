@@ -2,13 +2,13 @@
   "sounds.hookahmod.inhale": "Вдох",
   "sounds.hookahmod.exhale": "Выдох",
 
-  "text.autoconfig.hookah_mod.option.modEnabled": "Мод включен",
-  "text.autoconfig.hookah_mod.option.particlesAboveBrewingStand": "Партиклы над варочной стойкой",
-  "text.autoconfig.hookah_mod.option.sounds": "Звуки",
+  "text.autoconfig.brewing_stand_smoke.option.modEnabled": "Мод включен",
+  "text.autoconfig.brewing_stand_smoke.option.particlesAboveBrewingStand": "Партиклы над варочной стойкой",
+  "text.autoconfig.brewing_stand_smoke.option.sounds": "Звуки",
 
-  "text.autoconfig.hookah_mod.option.particleSettings": "Настройки партиклов",
-  "text.autoconfig.hookah_mod.option.particleSettings.whiteParticles": "Белые партиклы",
-  "text.autoconfig.hookah_mod.option.particleSettings.shadeOfEffect": "Оттенок эффекта",
-  "text.autoconfig.hookah_mod.option.particleSettings.shadeOfEffect.@Tooltip": "Придает партиклу оттенок эффекта кальяна (работает только с белыми партиклами)",
-  "text.autoconfig.hookah_mod.option.particleSettings.tintCoefficient": "Коэффициент окрашивания партикла"
+  "text.autoconfig.brewing_stand_smoke.option.particleSettings": "Настройки партиклов",
+  "text.autoconfig.brewing_stand_smoke.option.particleSettings.whiteParticles": "Белые партиклы",
+  "text.autoconfig.brewing_stand_smoke.option.particleSettings.shadeOfEffect": "Оттенок эффекта",
+  "text.autoconfig.brewing_stand_smoke.option.particleSettings.shadeOfEffect.@Tooltip": "Придает партиклу оттенок эффекта кальяна (работает только с белыми партиклами)",
+  "text.autoconfig.brewing_stand_smoke.option.particleSettings.tintCoefficient": "Коэффициент окрашивания партикла"
 }
