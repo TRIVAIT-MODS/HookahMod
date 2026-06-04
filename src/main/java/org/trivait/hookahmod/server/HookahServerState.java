@@ -18,7 +18,7 @@ public class HookahServerState {
     private static Path statePath;
 
     public static void load() {
-        statePath = FabricLoader.getInstance().getConfigDir().resolve("hookah_server_state.json");
+        statePath = FabricLoader.getInstance().getConfigDir().resolve("brewing_stand_server_state.json");
         if (!Files.exists(statePath)) { save(); return; }
         try {
             StateData data = GSON.fromJson(Files.readString(statePath), StateData.class);
@@ -27,7 +27,7 @@ public class HookahServerState {
                 effectsEnabled = data.effectsEnabled;
             }
         } catch (IOException e) {
-            HookahMod.LOGGER.error("Failed to load hookah server state", e);
+            HookahMod.LOGGER.error("Failed to load BrewingStandSmoke server state", e);
         }
     }
 
